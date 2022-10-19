@@ -1,0 +1,9 @@
+0b7126e0c6e86d3ec295a72f5aa6e0bd
+::res://::1666219047
+Asiento_panel.tscn::PackedScene::2139056020723728447::1665780563::0::1::::<><>::
+client_interface.tscn::PackedScene::8898627872720027607::1665780563::0::1::::<><>::
+control.tscn::PackedScene::1056211036395924092::1665780563::0::1::::<><>::res://Popup.gd<>uid://damnj6214jvcd<>uid://dy1tdoybw2j72<>uid://dxmok073vb72j
+employee_interface.tscn::PackedScene::8799247247458371831::1665780563::0::1::::<><>::uid://5qf672kxw72j
+icon.svg::CompressedTexture2D::2193147730803714910::1665679923::1665679931::1::::<><>::
+Login.tscn::PackedScene::7184841648333155123::1665780563::0::1::::<><>::
+Popup.gd::GDScript::-1::1665696010::0::1::::<>Popup<>::
