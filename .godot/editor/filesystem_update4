@@ -1,8 +1,1 @@
-res://Login.tscn
-res://LoginManager.gd
-res://control.tscn
-res://client_interface.tscn
-res://Asiento_panel.tscn
 res://employee_interface.tscn
-res://control.gd
-res://Popup.gd
