@@ -8,9 +8,13 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 
 func _on_popup_close_requested():
+	hide()
+
+
+func _on_login_manager_successful_signal(_tipo_usuario):
 	hide()

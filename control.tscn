@@ -1,10 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://pbvv2r0rn62s"]
+[gd_scene load_steps=4 format=3 uid="uid://pbvv2r0rn62s"]
 
 [ext_resource type="Script" path="res://control.gd" id="1_1l48v"]
 [ext_resource type="Script" path="res://Popup.gd" id="1_s2aci"]
 [ext_resource type="PackedScene" uid="uid://damnj6214jvcd" path="res://Login.tscn" id="1_vk5re"]
-[ext_resource type="PackedScene" uid="uid://dy1tdoybw2j72" path="res://client_interface.tscn" id="1_yok83"]
-[ext_resource type="PackedScene" uid="uid://dxmok073vb72j" path="res://employee_interface.tscn" id="2_73irx"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -30,26 +28,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="ClientInterface" parent="ReferenceRect/PanelContainer" instance=ExtResource("1_yok83")]
-layout_mode = 2
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_right = 1360.0
-offset_bottom = 768.0
-grow_horizontal = 1
-grow_vertical = 1
-
-[node name="EmployeeInterface" parent="ReferenceRect/PanelContainer" instance=ExtResource("2_73irx")]
-layout_mode = 2
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_right = 1360.0
-offset_bottom = 768.0
-grow_horizontal = 1
-grow_vertical = 1
 
 [node name="Popup" type="Popup" parent="."]
 title = "Login"
@@ -78,5 +56,6 @@ grow_vertical = 2
 
 [connection signal="close_requested" from="Popup" to="Popup" method="_on_popup_close_requested"]
 [connection signal="successful_signal" from="Popup/Control/LoginManager" to="." method="_on_login_manager_successful_signal"]
+[connection signal="successful_signal" from="Popup/Control/LoginManager" to="Popup" method="_on_login_manager_successful_signal"]
 
 [editable path="Popup/Control"]

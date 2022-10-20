@@ -20,7 +20,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 
@@ -39,3 +39,5 @@ func validate_login():
 		print("Contraseña incorrecta")
 		return
 	print("Logueado")
+	
+	emit_signal("successful_signal",users.get(usuario)[1])

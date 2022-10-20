@@ -5,3 +5,4 @@ res://client_interface.tscn
 res://Asiento_panel.tscn
 res://employee_interface.tscn
 res://control.gd
+res://Popup.gd
