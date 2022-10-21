@@ -1,1 +1,7 @@
+res://control.tscn
+res://client_interface.tscn
+res://Login.tscn
 res://employee_interface.tscn
+res://celda_boleto.tscn
+res://addToCart.gd
+res://CampoNumerico.gd

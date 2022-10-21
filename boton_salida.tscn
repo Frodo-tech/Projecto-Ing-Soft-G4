@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://ktnakm857xv2"]
+
+[ext_resource type="Script" path="res://BotonSalida.gd" id="1_t6uh8"]
+
+[node name="BotonSalida" type="Button"]
+offset_right = 42.0
+offset_bottom = 31.0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+text = "Salir"
+script = ExtResource("1_t6uh8")
+
+[connection signal="pressed" from="." to="." method="_on_boton_salida_pressed"]

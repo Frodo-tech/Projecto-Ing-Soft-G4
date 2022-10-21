@@ -40,6 +40,27 @@ script = ExtResource("1_s2aci")
 
 [node name="Control" parent="Popup" instance=ExtResource("1_vk5re")]
 
+[node name="VBoxContainer" parent="Popup/Control" index="0"]
+layout_mode = 1
+
+[node name="Label" parent="Popup/Control/VBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="UserField" parent="Popup/Control/VBoxContainer" index="1"]
+layout_mode = 2
+
+[node name="Label2" parent="Popup/Control/VBoxContainer" index="2"]
+layout_mode = 2
+
+[node name="PassField" parent="Popup/Control/VBoxContainer" index="3"]
+layout_mode = 2
+
+[node name="HSeparator" parent="Popup/Control/VBoxContainer" index="4"]
+layout_mode = 2
+
+[node name="Button" parent="Popup/Control/VBoxContainer" index="5"]
+layout_mode = 2
+
 [node name="Center" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 8
