@@ -5,8 +5,9 @@ res://addons/SimpleTODO/TODOColumn.tscn::16032ac0332cd606a835ff6ff69e4ee6::16662
 res://addons/SimpleTODO/TODOItem.tscn::383df57e45e7c72c005db4fc87c07acb::1666221175::res://.godot/exported/133200997/export-495539e996a0b3b374cb40946f052bdd-TODOItem.scn
 res://Asiento_panel.tscn::00238168c4aebd42ce986031b3ed62e3::1666225284::res://.godot/exported/133200997/export-8b557783a82960e479014a46f76708e8-Asiento_panel.scn
 res://boton_salida.tscn::b664ee6e976316f17eaee35b98d2a340::1666368485::res://.godot/exported/133200997/export-8870802a6bd94999b84fdafa08a4424e-boton_salida.scn
-res://celda_boleto.tscn::99685718f64c39024302d40317b1445d::1666375103::res://.godot/exported/133200997/export-33ad84cb1978c7e03e8433691a68732e-celda_boleto.scn
-res://client_interface.tscn::dad5abe5d61f36d23cc2e487a9135d1c::1666375103::res://.godot/exported/133200997/export-f09091daeafdc3b212fa8a3137523ed4-client_interface.scn
-res://control.tscn::93e54b71bbbe16d2818151443c6f9c1f::1666375103::res://.godot/exported/133200997/export-e66311c87c39ec8c25379305b5ae724b-control.scn
-res://employee_interface.tscn::a441a9faa7a84e7ec35d2703c2fc1357::1666375103::res://.godot/exported/133200997/export-b81bda60b3f0177c717dd2aeab54ad8a-employee_interface.scn
-res://Login.tscn::1beb3714a10ac63def21e90ce2cc93d5::1666375103::res://.godot/exported/133200997/export-79cfdab58b795e8363d081efbac867aa-Login.scn
+res://celda_boleto.tscn::99685718f64c39024302d40317b1445d::1666376053::res://.godot/exported/133200997/export-33ad84cb1978c7e03e8433691a68732e-celda_boleto.scn
+res://client_interface.tscn::dad5abe5d61f36d23cc2e487a9135d1c::1666986207::res://.godot/exported/133200997/export-f09091daeafdc3b212fa8a3137523ed4-client_interface.scn
+res://control.tscn::93e54b71bbbe16d2818151443c6f9c1f::1666986207::res://.godot/exported/133200997/export-e66311c87c39ec8c25379305b5ae724b-control.scn
+res://employee_interface.tscn::e74974afc1959497682785685891eb60::1666986341::res://.godot/exported/133200997/export-b81bda60b3f0177c717dd2aeab54ad8a-employee_interface.scn
+res://Login.tscn::1beb3714a10ac63def21e90ce2cc93d5::1666986207::res://.godot/exported/133200997/export-79cfdab58b795e8363d081efbac867aa-Login.scn
+res://pelicula.tscn::338b901d8f51b1f4853e034a5494dbb3::1666986207::res://.godot/exported/133200997/export-7bcf8f6d1ae394949787c696154e127b-pelicula.scn

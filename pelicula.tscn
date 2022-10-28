@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dllwteyxwxqxv"]
+
+[ext_resource type="Script" path="res://BotonPelicula.gd" id="1_fg1t4"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_5pcrf"]
+
+[node name="Pelicula" type="Button"]
+offset_right = 292.0
+offset_bottom = 31.0
+button_group = SubResource("ButtonGroup_5pcrf")
+text = "Los Minions"
+flat = true
+alignment = 0
+script = ExtResource("1_fg1t4")
+
+[connection signal="pressed" from="." to="." method="_on_pelicula_pressed"]

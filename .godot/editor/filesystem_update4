@@ -1,7 +1,7 @@
+res://pelicula.tscn
+res://BotonPelicula.gd
+res://employee_interface.tscn
+res://InterfaceController.gd
 res://control.tscn
 res://client_interface.tscn
 res://Login.tscn
-res://employee_interface.tscn
-res://celda_boleto.tscn
-res://addToCart.gd
-res://CampoNumerico.gd

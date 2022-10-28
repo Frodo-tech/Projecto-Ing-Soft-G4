@@ -1,10 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://dxmok073vb72j"]
+[gd_scene load_steps=24 format=3 uid="uid://dxmok073vb72j"]
 
 [ext_resource type="Script" path="res://CampoNumerico.gd" id="1_8uw06"]
 [ext_resource type="PackedScene" uid="uid://5qf672kxw72j" path="res://Asiento_panel.tscn" id="1_jb1vo"]
 [ext_resource type="PackedScene" uid="uid://buwrna6hb738u" path="res://celda_boleto.tscn" id="1_nccxh"]
+[ext_resource type="PackedScene" uid="uid://dllwteyxwxqxv" path="res://pelicula.tscn" id="1_rg2pr"]
 [ext_resource type="Script" path="res://addToCart.gd" id="2_82o8w"]
 [ext_resource type="PackedScene" uid="uid://ktnakm857xv2" path="res://boton_salida.tscn" id="3_tsou2"]
+[ext_resource type="Script" path="res://InterfaceController.gd" id="7_oupvt"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0fwa3"]
 
@@ -12,7 +14,21 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_08gek"]
 
-[sub_resource type="ButtonGroup" id="ButtonGroup_5pcrf"]
+[sub_resource type="ButtonGroup" id="ButtonGroup_ocjuj"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_d8uus"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_iyh4m"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_bmd5b"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_a0byt"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_v7nf6"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_k68ew"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_62igx"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o85uc"]
 
@@ -35,12 +51,14 @@ mouse_filter = 2
 metadata/_edit_horizontal_guides_ = [-141.0]
 
 [node name="MainFrame" type="HBoxContainer" parent="."]
+layout_mode = 2
 offset_right = 1360.0
 offset_bottom = 768.0
 mouse_filter = 2
 alignment = 1
 
 [node name="VSeparator" type="VSeparator" parent="MainFrame"]
+layout_mode = 2
 offset_right = 5.0
 offset_bottom = 768.0
 mouse_filter = 2
@@ -48,6 +66,7 @@ theme_override_constants/separation = 5
 theme_override_styles/separator = SubResource("StyleBoxEmpty_0fwa3")
 
 [node name="VMainFrame" type="VBoxContainer" parent="MainFrame"]
+layout_mode = 2
 offset_left = 9.0
 offset_right = 1351.0
 offset_bottom = 768.0
@@ -55,6 +74,7 @@ size_flags_horizontal = 3
 mouse_filter = 2
 
 [node name="HSeparator" type="HSeparator" parent="MainFrame/VMainFrame"]
+layout_mode = 2
 offset_right = 1342.0
 offset_bottom = 10.0
 mouse_filter = 2
@@ -62,6 +82,7 @@ theme_override_constants/separation = 10
 theme_override_styles/separator = SubResource("StyleBoxEmpty_ysqj4")
 
 [node name="BotonConserje" type="Button" parent="MainFrame/VMainFrame"]
+layout_mode = 2
 offset_left = 1208.0
 offset_top = 14.0
 offset_right = 1342.0
@@ -71,198 +92,130 @@ size_flags_vertical = 4
 text = "Llamar Conserje"
 
 [node name="SeccionPelicuas" type="HBoxContainer" parent="MainFrame/VMainFrame"]
+layout_mode = 2
 offset_top = 49.0
 offset_right = 1342.0
 offset_bottom = 377.0
 size_flags_vertical = 3
 
 [node name="VSeparator" type="VSeparator" parent="MainFrame/VMainFrame/SeccionPelicuas"]
+layout_mode = 2
 offset_right = 4.0
 offset_bottom = 328.0
 theme_override_styles/separator = SubResource("StyleBoxEmpty_08gek")
 
 [node name="PanelPeliculas" type="PanelContainer" parent="MainFrame/VMainFrame/SeccionPelicuas"]
 custom_minimum_size = Vector2i(300, 100)
+layout_mode = 2
 offset_left = 8.0
 offset_right = 308.0
 offset_bottom = 328.0
 
 [node name="OrdenadorPelis" type="ScrollContainer" parent="MainFrame/VMainFrame/SeccionPelicuas/PanelPeliculas"]
+layout_mode = 2
 offset_right = 300.0
 offset_bottom = 328.0
 
 [node name="ContenedorPelis" type="VBoxContainer" parent="MainFrame/VMainFrame/SeccionPelicuas/PanelPeliculas/OrdenadorPelis"]
-offset_right = 292.0
-offset_bottom = 521.0
+layout_mode = 2
+offset_right = 300.0
+offset_bottom = 276.0
 size_flags_horizontal = 3
 
-[node name="Pelicula" type="Button" parent="MainFrame/VMainFrame/SeccionPelicuas/PanelPeliculas/OrdenadorPelis/ContenedorPelis"]
-offset_right = 292.0
-offset_bottom = 31.0
-button_group = SubResource("ButtonGroup_5pcrf")
-text = "Los Minions"
-flat = true
-alignment = 0
+[node name="Pelicula" parent="MainFrame/VMainFrame/SeccionPelicuas/PanelPeliculas/OrdenadorPelis/ContenedorPelis" instance=ExtResource("1_rg2pr")]
+layout_mode = 2
+offset_right = 300.0
+button_group = SubResource("ButtonGroup_ocjuj")
 
-[node name="Pelicula2" type="Button" parent="MainFrame/VMainFrame/SeccionPelicuas/PanelPeliculas/OrdenadorPelis/ContenedorPelis"]
+[node name="Pelicula2" parent="MainFrame/VMainFrame/SeccionPelicuas/PanelPeliculas/OrdenadorPelis/ContenedorPelis" instance=ExtResource("1_rg2pr")]
+layout_mode = 2
 offset_top = 35.0
-offset_right = 292.0
+offset_right = 300.0
 offset_bottom = 66.0
-button_group = SubResource("ButtonGroup_5pcrf")
-text = "Los Minions"
-flat = true
-alignment = 0
+button_group = SubResource("ButtonGroup_d8uus")
 
-[node name="Pelicula3" type="Button" parent="MainFrame/VMainFrame/SeccionPelicuas/PanelPeliculas/OrdenadorPelis/ContenedorPelis"]
+[node name="Pelicula3" parent="MainFrame/VMainFrame/SeccionPelicuas/PanelPeliculas/OrdenadorPelis/ContenedorPelis" instance=ExtResource("1_rg2pr")]
+layout_mode = 2
 offset_top = 70.0
-offset_right = 292.0
+offset_right = 300.0
 offset_bottom = 101.0
-button_group = SubResource("ButtonGroup_5pcrf")
-text = "Los Minions"
-flat = true
-alignment = 0
+button_group = SubResource("ButtonGroup_iyh4m")
 
-[node name="Pelicula4" type="Button" parent="MainFrame/VMainFrame/SeccionPelicuas/PanelPeliculas/OrdenadorPelis/ContenedorPelis"]
+[node name="Pelicula4" parent="MainFrame/VMainFrame/SeccionPelicuas/PanelPeliculas/OrdenadorPelis/ContenedorPelis" instance=ExtResource("1_rg2pr")]
+layout_mode = 2
 offset_top = 105.0
-offset_right = 292.0
+offset_right = 300.0
 offset_bottom = 136.0
-button_group = SubResource("ButtonGroup_5pcrf")
-text = "Los Minions"
-flat = true
-alignment = 0
+button_group = SubResource("ButtonGroup_bmd5b")
 
-[node name="Pelicula5" type="Button" parent="MainFrame/VMainFrame/SeccionPelicuas/PanelPeliculas/OrdenadorPelis/ContenedorPelis"]
+[node name="Pelicula5" parent="MainFrame/VMainFrame/SeccionPelicuas/PanelPeliculas/OrdenadorPelis/ContenedorPelis" instance=ExtResource("1_rg2pr")]
+layout_mode = 2
 offset_top = 140.0
-offset_right = 292.0
+offset_right = 300.0
 offset_bottom = 171.0
-button_group = SubResource("ButtonGroup_5pcrf")
-text = "Los Minions"
-flat = true
-alignment = 0
+button_group = SubResource("ButtonGroup_a0byt")
 
-[node name="Pelicula6" type="Button" parent="MainFrame/VMainFrame/SeccionPelicuas/PanelPeliculas/OrdenadorPelis/ContenedorPelis"]
+[node name="Pelicula6" parent="MainFrame/VMainFrame/SeccionPelicuas/PanelPeliculas/OrdenadorPelis/ContenedorPelis" instance=ExtResource("1_rg2pr")]
+layout_mode = 2
 offset_top = 175.0
-offset_right = 292.0
+offset_right = 300.0
 offset_bottom = 206.0
-button_group = SubResource("ButtonGroup_5pcrf")
-text = "Los Minions"
-flat = true
-alignment = 0
+button_group = SubResource("ButtonGroup_v7nf6")
 
-[node name="Pelicula7" type="Button" parent="MainFrame/VMainFrame/SeccionPelicuas/PanelPeliculas/OrdenadorPelis/ContenedorPelis"]
+[node name="Pelicula7" parent="MainFrame/VMainFrame/SeccionPelicuas/PanelPeliculas/OrdenadorPelis/ContenedorPelis" instance=ExtResource("1_rg2pr")]
+layout_mode = 2
 offset_top = 210.0
-offset_right = 292.0
+offset_right = 300.0
 offset_bottom = 241.0
-button_group = SubResource("ButtonGroup_5pcrf")
-text = "Los Minions"
-flat = true
-alignment = 0
+button_group = SubResource("ButtonGroup_k68ew")
 
-[node name="Pelicula8" type="Button" parent="MainFrame/VMainFrame/SeccionPelicuas/PanelPeliculas/OrdenadorPelis/ContenedorPelis"]
+[node name="Pelicula8" parent="MainFrame/VMainFrame/SeccionPelicuas/PanelPeliculas/OrdenadorPelis/ContenedorPelis" instance=ExtResource("1_rg2pr")]
+layout_mode = 2
 offset_top = 245.0
-offset_right = 292.0
+offset_right = 300.0
 offset_bottom = 276.0
-button_group = SubResource("ButtonGroup_5pcrf")
-text = "Los Minions"
-flat = true
-alignment = 0
-
-[node name="Pelicula9" type="Button" parent="MainFrame/VMainFrame/SeccionPelicuas/PanelPeliculas/OrdenadorPelis/ContenedorPelis"]
-offset_top = 280.0
-offset_right = 292.0
-offset_bottom = 311.0
-button_group = SubResource("ButtonGroup_5pcrf")
-text = "Los Minions"
-flat = true
-alignment = 0
-
-[node name="Pelicula10" type="Button" parent="MainFrame/VMainFrame/SeccionPelicuas/PanelPeliculas/OrdenadorPelis/ContenedorPelis"]
-offset_top = 315.0
-offset_right = 292.0
-offset_bottom = 346.0
-button_group = SubResource("ButtonGroup_5pcrf")
-text = "Los Minions"
-flat = true
-alignment = 0
-
-[node name="Pelicula11" type="Button" parent="MainFrame/VMainFrame/SeccionPelicuas/PanelPeliculas/OrdenadorPelis/ContenedorPelis"]
-offset_top = 350.0
-offset_right = 292.0
-offset_bottom = 381.0
-button_group = SubResource("ButtonGroup_5pcrf")
-text = "Los Minions"
-flat = true
-alignment = 0
-
-[node name="Pelicula12" type="Button" parent="MainFrame/VMainFrame/SeccionPelicuas/PanelPeliculas/OrdenadorPelis/ContenedorPelis"]
-offset_top = 385.0
-offset_right = 292.0
-offset_bottom = 416.0
-button_group = SubResource("ButtonGroup_5pcrf")
-text = "Los Minions"
-flat = true
-alignment = 0
-
-[node name="Pelicula13" type="Button" parent="MainFrame/VMainFrame/SeccionPelicuas/PanelPeliculas/OrdenadorPelis/ContenedorPelis"]
-offset_top = 420.0
-offset_right = 292.0
-offset_bottom = 451.0
-button_group = SubResource("ButtonGroup_5pcrf")
-text = "Los Minions"
-flat = true
-alignment = 0
-
-[node name="Pelicula14" type="Button" parent="MainFrame/VMainFrame/SeccionPelicuas/PanelPeliculas/OrdenadorPelis/ContenedorPelis"]
-offset_top = 455.0
-offset_right = 292.0
-offset_bottom = 486.0
-button_group = SubResource("ButtonGroup_5pcrf")
-text = "Los Minions"
-flat = true
-alignment = 0
-
-[node name="Pelicula15" type="Button" parent="MainFrame/VMainFrame/SeccionPelicuas/PanelPeliculas/OrdenadorPelis/ContenedorPelis"]
-offset_top = 490.0
-offset_right = 292.0
-offset_bottom = 521.0
-button_group = SubResource("ButtonGroup_5pcrf")
-text = "Los Minions"
-flat = true
-alignment = 0
+button_group = SubResource("ButtonGroup_62igx")
 
 [node name="PanelInformacion" type="PanelContainer" parent="MainFrame/VMainFrame/SeccionPelicuas"]
 custom_minimum_size = Vector2i(500, 0)
+layout_mode = 2
 offset_left = 312.0
 offset_right = 812.0
 offset_bottom = 328.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MainFrame/VMainFrame/SeccionPelicuas/PanelInformacion"]
+layout_mode = 2
 offset_right = 500.0
 offset_bottom = 328.0
 theme_override_constants/separation = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainFrame/VMainFrame/SeccionPelicuas/PanelInformacion/HBoxContainer"]
+layout_mode = 2
 offset_right = 281.0
 offset_bottom = 328.0
 
 [node name="Label" type="Label" parent="MainFrame/VMainFrame/SeccionPelicuas/PanelInformacion/HBoxContainer/VBoxContainer"]
+layout_mode = 2
 offset_right = 281.0
 offset_bottom = 26.0
 text = "Hora de inicio: 05:30 pm"
 
 [node name="Label2" type="Label" parent="MainFrame/VMainFrame/SeccionPelicuas/PanelInformacion/HBoxContainer/VBoxContainer"]
+layout_mode = 2
 offset_top = 30.0
 offset_right = 281.0
 offset_bottom = 56.0
 text = "Boletos Disponibles: 26"
 
 [node name="Label3" type="Label" parent="MainFrame/VMainFrame/SeccionPelicuas/PanelInformacion/HBoxContainer/VBoxContainer"]
+layout_mode = 2
 offset_top = 60.0
 offset_right = 281.0
 offset_bottom = 86.0
 text = "Estado de emisión: SIN REPRODUCIR"
 
 [node name="Label4" type="Label" parent="MainFrame/VMainFrame/SeccionPelicuas/PanelInformacion/HBoxContainer/VBoxContainer"]
+layout_mode = 2
 offset_top = 90.0
 offset_right = 281.0
 offset_bottom = 116.0
@@ -271,11 +224,13 @@ clip_text = true
 text_overrun_behavior = 3
 
 [node name="VSeparator" type="VSeparator" parent="MainFrame/VMainFrame/SeccionPelicuas/PanelInformacion/HBoxContainer"]
+layout_mode = 2
 offset_left = 286.0
 offset_right = 290.0
 offset_bottom = 328.0
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MainFrame/VMainFrame/SeccionPelicuas/PanelInformacion/HBoxContainer"]
+layout_mode = 2
 offset_left = 295.0
 offset_right = 500.0
 offset_bottom = 328.0
@@ -283,12 +238,14 @@ size_flags_horizontal = 3
 alignment = 1
 
 [node name="HSeparator" type="HSeparator" parent="MainFrame/VMainFrame/SeccionPelicuas/PanelInformacion/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
 offset_right = 205.0
 offset_bottom = 10.0
 theme_override_constants/separation = 10
 theme_override_styles/separator = SubResource("StyleBoxEmpty_o85uc")
 
 [node name="Label" type="Label" parent="MainFrame/VMainFrame/SeccionPelicuas/PanelInformacion/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
 offset_top = 14.0
 offset_right = 205.0
 offset_bottom = 40.0
@@ -296,6 +253,7 @@ text = "Cantidad de Boletos"
 horizontal_alignment = 1
 
 [node name="LineEdit" type="LineEdit" parent="MainFrame/VMainFrame/SeccionPelicuas/PanelInformacion/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
 offset_left = 68.0
 offset_top = 44.0
 offset_right = 135.063
@@ -305,6 +263,7 @@ caret_blink = true
 script = ExtResource("1_8uw06")
 
 [node name="Button" type="Button" parent="MainFrame/VMainFrame/SeccionPelicuas/PanelInformacion/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
 offset_top = 283.0
 offset_right = 205.0
 offset_bottom = 314.0
@@ -313,6 +272,7 @@ text = "Añadir al carro"
 script = ExtResource("2_82o8w")
 
 [node name="HSeparator2" type="HSeparator" parent="MainFrame/VMainFrame/SeccionPelicuas/PanelInformacion/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
 offset_top = 318.0
 offset_right = 205.0
 offset_bottom = 328.0
@@ -320,6 +280,7 @@ theme_override_constants/separation = 10
 theme_override_styles/separator = SubResource("StyleBoxEmpty_o85uc")
 
 [node name="PanelContainer" type="PanelContainer" parent="MainFrame/VMainFrame/SeccionPelicuas"]
+layout_mode = 2
 offset_left = 816.0
 offset_right = 1342.0
 offset_bottom = 328.0
@@ -327,21 +288,25 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainFrame/VMainFrame/SeccionPelicuas/PanelContainer"]
+layout_mode = 2
 offset_right = 526.0
 offset_bottom = 328.0
 size_flags_horizontal = 3
 
 [node name="Resumen" type="PanelContainer" parent="MainFrame/VMainFrame/SeccionPelicuas/PanelContainer/VBoxContainer"]
 custom_minimum_size = Vector2i(0, 40)
+layout_mode = 2
 offset_right = 526.0
 offset_bottom = 40.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MainFrame/VMainFrame/SeccionPelicuas/PanelContainer/VBoxContainer/Resumen"]
+layout_mode = 2
 offset_right = 526.0
 offset_bottom = 40.0
 alignment = 1
 
 [node name="Label" type="Label" parent="MainFrame/VMainFrame/SeccionPelicuas/PanelContainer/VBoxContainer/Resumen/HBoxContainer"]
+layout_mode = 2
 offset_left = 48.0
 offset_top = 7.0
 offset_right = 200.0
@@ -349,6 +314,7 @@ offset_bottom = 33.0
 text = "Nombre de pelicula"
 
 [node name="VSeparator" type="VSeparator" parent="MainFrame/VMainFrame/SeccionPelicuas/PanelContainer/VBoxContainer/Resumen/HBoxContainer"]
+layout_mode = 2
 offset_left = 204.0
 offset_right = 404.0
 offset_bottom = 40.0
@@ -356,6 +322,7 @@ theme_override_constants/separation = 200
 theme_override_styles/separator = SubResource("StyleBoxEmpty_6lkbx")
 
 [node name="Label2" type="Label" parent="MainFrame/VMainFrame/SeccionPelicuas/PanelContainer/VBoxContainer/Resumen/HBoxContainer"]
+layout_mode = 2
 offset_left = 408.0
 offset_top = 7.0
 offset_right = 478.0
@@ -364,25 +331,30 @@ text = "Cantidad"
 horizontal_alignment = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MainFrame/VMainFrame/SeccionPelicuas/PanelContainer/VBoxContainer"]
+layout_mode = 2
 offset_top = 44.0
 offset_right = 526.0
 offset_bottom = 328.0
 size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainFrame/VMainFrame/SeccionPelicuas/PanelContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
 offset_right = 526.0
 offset_bottom = 40.0
 size_flags_horizontal = 3
 
 [node name="CeldaBoleto" parent="MainFrame/VMainFrame/SeccionPelicuas/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_nccxh")]
+layout_mode = 2
 
 [node name="VSeparator3" type="VSeparator" parent="MainFrame/VMainFrame"]
+layout_mode = 2
 offset_top = 381.0
 offset_right = 1342.0
 offset_bottom = 384.0
 theme_override_styles/separator = SubResource("StyleBoxEmpty_08gek")
 
 [node name="PanelMapa" type="PanelContainer" parent="MainFrame/VMainFrame"]
+layout_mode = 2
 offset_top = 388.0
 offset_right = 1342.0
 offset_bottom = 717.0
@@ -390,6 +362,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="GridContainer" type="GridContainer" parent="MainFrame/VMainFrame/PanelMapa"]
+layout_mode = 2
 offset_right = 1342.0
 offset_bottom = 329.0
 theme_override_constants/h_separation = 2
@@ -398,6 +371,7 @@ columns = 10
 
 [node name="Panel" parent="MainFrame/VMainFrame/PanelMapa/GridContainer" instance=ExtResource("1_jb1vo")]
 self_modulate = Color(0.407843, 1, 0, 1)
+layout_mode = 2
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -411,6 +385,7 @@ theme = SubResource("Theme_m88nt")
 
 [node name="Panel2" parent="MainFrame/VMainFrame/PanelMapa/GridContainer" instance=ExtResource("1_jb1vo")]
 self_modulate = Color(0.407843, 1, 0, 1)
+layout_mode = 2
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -424,7 +399,7 @@ size_flags_vertical = 3
 theme = SubResource("Theme_m88nt")
 
 [node name="Relleno9" type="Control" parent="MainFrame/VMainFrame/PanelMapa/GridContainer"]
-layout_mode = 3
+layout_mode = 2
 anchors_preset = 0
 offset_left = 270.0
 offset_right = 403.0
@@ -432,6 +407,7 @@ offset_bottom = 81.0
 
 [node name="Panel5" parent="MainFrame/VMainFrame/PanelMapa/GridContainer" instance=ExtResource("1_jb1vo")]
 self_modulate = Color(0.407843, 1, 0, 1)
+layout_mode = 2
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -446,6 +422,7 @@ theme = SubResource("Theme_m88nt")
 
 [node name="Panel6" parent="MainFrame/VMainFrame/PanelMapa/GridContainer" instance=ExtResource("1_jb1vo")]
 self_modulate = Color(0.407843, 1, 0, 1)
+layout_mode = 2
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -460,6 +437,7 @@ theme = SubResource("Theme_m88nt")
 
 [node name="Panel7" parent="MainFrame/VMainFrame/PanelMapa/GridContainer" instance=ExtResource("1_jb1vo")]
 self_modulate = Color(0.407843, 1, 0, 1)
+layout_mode = 2
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -474,6 +452,7 @@ theme = SubResource("Theme_m88nt")
 
 [node name="Panel9" parent="MainFrame/VMainFrame/PanelMapa/GridContainer" instance=ExtResource("1_jb1vo")]
 self_modulate = Color(0.407843, 1, 0, 1)
+layout_mode = 2
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -487,7 +466,7 @@ size_flags_vertical = 3
 theme = SubResource("Theme_m88nt")
 
 [node name="Relleno" type="Control" parent="MainFrame/VMainFrame/PanelMapa/GridContainer"]
-layout_mode = 3
+layout_mode = 2
 anchors_preset = 0
 offset_left = 942.0
 offset_right = 1074.0
@@ -495,6 +474,7 @@ offset_bottom = 81.0
 
 [node name="Panel11" parent="MainFrame/VMainFrame/PanelMapa/GridContainer" instance=ExtResource("1_jb1vo")]
 self_modulate = Color(0.407843, 1, 0, 1)
+layout_mode = 2
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -509,6 +489,7 @@ theme = SubResource("Theme_m88nt")
 
 [node name="Panel12" parent="MainFrame/VMainFrame/PanelMapa/GridContainer" instance=ExtResource("1_jb1vo")]
 self_modulate = Color(0.407843, 1, 0, 1)
+layout_mode = 2
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -523,6 +504,7 @@ theme = SubResource("Theme_m88nt")
 
 [node name="Panel14" parent="MainFrame/VMainFrame/PanelMapa/GridContainer" instance=ExtResource("1_jb1vo")]
 self_modulate = Color(0.407843, 1, 0, 1)
+layout_mode = 2
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -537,6 +519,7 @@ theme = SubResource("Theme_m88nt")
 
 [node name="Panel15" parent="MainFrame/VMainFrame/PanelMapa/GridContainer" instance=ExtResource("1_jb1vo")]
 self_modulate = Color(0.407843, 1, 0, 1)
+layout_mode = 2
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -551,7 +534,7 @@ size_flags_vertical = 3
 theme = SubResource("Theme_m88nt")
 
 [node name="Relleno3" type="Control" parent="MainFrame/VMainFrame/PanelMapa/GridContainer"]
-layout_mode = 3
+layout_mode = 2
 anchors_preset = 0
 offset_left = 270.0
 offset_top = 83.0
@@ -560,6 +543,7 @@ offset_bottom = 164.0
 
 [node name="Panel17" parent="MainFrame/VMainFrame/PanelMapa/GridContainer" instance=ExtResource("1_jb1vo")]
 self_modulate = Color(0.407843, 1, 0, 1)
+layout_mode = 2
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -575,6 +559,7 @@ theme = SubResource("Theme_m88nt")
 
 [node name="Panel19" parent="MainFrame/VMainFrame/PanelMapa/GridContainer" instance=ExtResource("1_jb1vo")]
 self_modulate = Color(0.407843, 1, 0, 1)
+layout_mode = 2
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -590,6 +575,7 @@ theme = SubResource("Theme_m88nt")
 
 [node name="Panel20" parent="MainFrame/VMainFrame/PanelMapa/GridContainer" instance=ExtResource("1_jb1vo")]
 self_modulate = Color(0.407843, 1, 0, 1)
+layout_mode = 2
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -605,6 +591,7 @@ theme = SubResource("Theme_m88nt")
 
 [node name="Panel21" parent="MainFrame/VMainFrame/PanelMapa/GridContainer" instance=ExtResource("1_jb1vo")]
 self_modulate = Color(0.407843, 1, 0, 1)
+layout_mode = 2
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -619,7 +606,7 @@ size_flags_vertical = 3
 theme = SubResource("Theme_m88nt")
 
 [node name="Relleno2" type="Control" parent="MainFrame/VMainFrame/PanelMapa/GridContainer"]
-layout_mode = 3
+layout_mode = 2
 anchors_preset = 0
 offset_left = 942.0
 offset_top = 83.0
@@ -628,6 +615,7 @@ offset_bottom = 164.0
 
 [node name="Panel24" parent="MainFrame/VMainFrame/PanelMapa/GridContainer" instance=ExtResource("1_jb1vo")]
 self_modulate = Color(0.407843, 1, 0, 1)
+layout_mode = 2
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -643,6 +631,7 @@ theme = SubResource("Theme_m88nt")
 
 [node name="Panel25" parent="MainFrame/VMainFrame/PanelMapa/GridContainer" instance=ExtResource("1_jb1vo")]
 self_modulate = Color(0.407843, 1, 0, 1)
+layout_mode = 2
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -658,6 +647,7 @@ theme = SubResource("Theme_m88nt")
 
 [node name="Panel26" parent="MainFrame/VMainFrame/PanelMapa/GridContainer" instance=ExtResource("1_jb1vo")]
 self_modulate = Color(0.407843, 1, 0, 1)
+layout_mode = 2
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -672,6 +662,7 @@ theme = SubResource("Theme_m88nt")
 
 [node name="Panel27" parent="MainFrame/VMainFrame/PanelMapa/GridContainer" instance=ExtResource("1_jb1vo")]
 self_modulate = Color(0.407843, 1, 0, 1)
+layout_mode = 2
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -686,7 +677,7 @@ size_flags_vertical = 3
 theme = SubResource("Theme_m88nt")
 
 [node name="Relleno4" type="Control" parent="MainFrame/VMainFrame/PanelMapa/GridContainer"]
-layout_mode = 3
+layout_mode = 2
 anchors_preset = 0
 offset_left = 270.0
 offset_top = 166.0
@@ -697,6 +688,7 @@ size_flags_vertical = 3
 
 [node name="Panel30" parent="MainFrame/VMainFrame/PanelMapa/GridContainer" instance=ExtResource("1_jb1vo")]
 self_modulate = Color(0.407843, 1, 0, 1)
+layout_mode = 2
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -712,6 +704,7 @@ theme = SubResource("Theme_m88nt")
 
 [node name="Panel31" parent="MainFrame/VMainFrame/PanelMapa/GridContainer" instance=ExtResource("1_jb1vo")]
 self_modulate = Color(0.407843, 1, 0, 1)
+layout_mode = 2
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -727,6 +720,7 @@ theme = SubResource("Theme_m88nt")
 
 [node name="Panel32" parent="MainFrame/VMainFrame/PanelMapa/GridContainer" instance=ExtResource("1_jb1vo")]
 self_modulate = Color(0.407843, 1, 0, 1)
+layout_mode = 2
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -742,6 +736,7 @@ theme = SubResource("Theme_m88nt")
 
 [node name="Panel34" parent="MainFrame/VMainFrame/PanelMapa/GridContainer" instance=ExtResource("1_jb1vo")]
 self_modulate = Color(0.407843, 1, 0, 1)
+layout_mode = 2
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -756,7 +751,7 @@ size_flags_vertical = 3
 theme = SubResource("Theme_m88nt")
 
 [node name="Relleno5" type="Control" parent="MainFrame/VMainFrame/PanelMapa/GridContainer"]
-layout_mode = 3
+layout_mode = 2
 anchors_preset = 0
 offset_left = 942.0
 offset_top = 166.0
@@ -767,6 +762,7 @@ size_flags_vertical = 3
 
 [node name="Panel36" parent="MainFrame/VMainFrame/PanelMapa/GridContainer" instance=ExtResource("1_jb1vo")]
 self_modulate = Color(0.407843, 1, 0, 1)
+layout_mode = 2
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -782,6 +778,7 @@ theme = SubResource("Theme_m88nt")
 
 [node name="Panel37" parent="MainFrame/VMainFrame/PanelMapa/GridContainer" instance=ExtResource("1_jb1vo")]
 self_modulate = Color(0.407843, 1, 0, 1)
+layout_mode = 2
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -796,14 +793,14 @@ size_flags_vertical = 3
 theme = SubResource("Theme_m88nt")
 
 [node name="Relleno6" type="Control" parent="MainFrame/VMainFrame/PanelMapa/GridContainer"]
-layout_mode = 3
+layout_mode = 2
 anchors_preset = 0
 offset_top = 249.0
 offset_right = 133.0
 offset_bottom = 329.0
 
 [node name="Relleno10" type="Control" parent="MainFrame/VMainFrame/PanelMapa/GridContainer"]
-layout_mode = 3
+layout_mode = 2
 anchors_preset = 0
 offset_left = 135.0
 offset_top = 249.0
@@ -811,7 +808,7 @@ offset_right = 268.0
 offset_bottom = 329.0
 
 [node name="Relleno11" type="Control" parent="MainFrame/VMainFrame/PanelMapa/GridContainer"]
-layout_mode = 3
+layout_mode = 2
 anchors_preset = 0
 offset_left = 270.0
 offset_top = 249.0
@@ -819,7 +816,7 @@ offset_right = 403.0
 offset_bottom = 329.0
 
 [node name="Relleno12" type="Control" parent="MainFrame/VMainFrame/PanelMapa/GridContainer"]
-layout_mode = 3
+layout_mode = 2
 anchors_preset = 0
 offset_left = 405.0
 offset_top = 249.0
@@ -828,6 +825,7 @@ offset_bottom = 329.0
 
 [node name="Panel39" parent="MainFrame/VMainFrame/PanelMapa/GridContainer" instance=ExtResource("1_jb1vo")]
 self_modulate = Color(0.407843, 1, 0, 1)
+layout_mode = 2
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -843,6 +841,7 @@ theme = SubResource("Theme_m88nt")
 
 [node name="Panel40" parent="MainFrame/VMainFrame/PanelMapa/GridContainer" instance=ExtResource("1_jb1vo")]
 self_modulate = Color(0.407843, 1, 0, 1)
+layout_mode = 2
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -857,7 +856,7 @@ size_flags_vertical = 3
 theme = SubResource("Theme_m88nt")
 
 [node name="Relleno13" type="Control" parent="MainFrame/VMainFrame/PanelMapa/GridContainer"]
-layout_mode = 3
+layout_mode = 2
 anchors_preset = 0
 offset_left = 808.0
 offset_top = 249.0
@@ -865,7 +864,7 @@ offset_right = 940.0
 offset_bottom = 329.0
 
 [node name="Relleno14" type="Control" parent="MainFrame/VMainFrame/PanelMapa/GridContainer"]
-layout_mode = 3
+layout_mode = 2
 anchors_preset = 0
 offset_left = 942.0
 offset_top = 249.0
@@ -873,7 +872,7 @@ offset_right = 1074.0
 offset_bottom = 329.0
 
 [node name="Relleno7" type="Control" parent="MainFrame/VMainFrame/PanelMapa/GridContainer"]
-layout_mode = 3
+layout_mode = 2
 anchors_preset = 0
 offset_left = 1076.0
 offset_top = 249.0
@@ -881,7 +880,7 @@ offset_right = 1208.0
 offset_bottom = 329.0
 
 [node name="Relleno8" type="Control" parent="MainFrame/VMainFrame/PanelMapa/GridContainer"]
-layout_mode = 3
+layout_mode = 2
 anchors_preset = 0
 offset_left = 1210.0
 offset_top = 249.0
@@ -889,6 +888,7 @@ offset_right = 1342.0
 offset_bottom = 329.0
 
 [node name="MarginContainer" type="MarginContainer" parent="MainFrame/VMainFrame"]
+layout_mode = 2
 offset_left = 1300.0
 offset_top = 721.0
 offset_right = 1342.0
@@ -898,8 +898,10 @@ size_flags_vertical = 8
 mouse_filter = 2
 
 [node name="BotonSalida" parent="MainFrame/VMainFrame/MarginContainer" instance=ExtResource("3_tsou2")]
+layout_mode = 2
 
 [node name="VSeparator2" type="VSeparator" parent="MainFrame/VMainFrame"]
+layout_mode = 2
 offset_top = 756.0
 offset_right = 1342.0
 offset_bottom = 759.0
@@ -908,6 +910,7 @@ theme_override_constants/separation = 5
 theme_override_styles/separator = SubResource("StyleBoxEmpty_0fwa3")
 
 [node name="HSeparator2" type="HSeparator" parent="MainFrame/VMainFrame"]
+layout_mode = 2
 offset_top = 763.0
 offset_right = 1342.0
 offset_bottom = 768.0
@@ -916,12 +919,16 @@ theme_override_constants/separation = 5
 theme_override_styles/separator = SubResource("StyleBoxEmpty_8d8x8")
 
 [node name="VSeparator2" type="VSeparator" parent="MainFrame"]
+layout_mode = 2
 offset_left = 1355.0
 offset_right = 1360.0
 offset_bottom = 768.0
 mouse_filter = 2
 theme_override_constants/separation = 5
 theme_override_styles/separator = SubResource("StyleBoxEmpty_0fwa3")
+
+[node name="InterfaceController" type="Node" parent="."]
+script = ExtResource("7_oupvt")
 
 [connection signal="text_changed" from="MainFrame/VMainFrame/SeccionPelicuas/PanelInformacion/HBoxContainer/VBoxContainer2/LineEdit" to="MainFrame/VMainFrame/SeccionPelicuas/PanelInformacion/HBoxContainer/VBoxContainer2/LineEdit" method="_on_line_edit_text_changed"]
 [connection signal="added_to_cart" from="MainFrame/VMainFrame/SeccionPelicuas/PanelInformacion/HBoxContainer/VBoxContainer2/Button" to="MainFrame/VMainFrame/SeccionPelicuas/PanelInformacion/HBoxContainer/VBoxContainer2/LineEdit" method="_on_button_added_to_cart"]
